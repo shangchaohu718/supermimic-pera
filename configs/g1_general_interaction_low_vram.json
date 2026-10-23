@@ -1,0 +1,18 @@
+{
+  "checkpoint": "/home/tcl/Desktop/start/HoloMotion-UM/runs/g1_supermimic_baseline_20261023_seed0/last.pt",
+  "motions": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/src/unisupermimic/assets/motions/g1/lafan1_supermimic",
+  "vaic_root": "/home/tcl/Desktop/start/VAIC/data/motion/g1/mirobotA",
+  "output": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/runs/g1_general_interaction_20261023_seed42",
+  "device": "cuda",
+  "iterations": 1000,
+  "warmup": 100,
+  "vram_mib": 4096,
+  "collect_steps": 4,
+  "per_task_batch": 4,
+  "horizon": 4,
+  "eval_every": 50,
+  "eval_steps": 256,
+  "episode_steps": 512,
+  "sleep": 0.1,
+  "seed": 42
+}

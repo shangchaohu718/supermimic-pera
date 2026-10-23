@@ -1,0 +1,370 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "task": "G1 autonomous push-and-skate",
+  "status": "first_skill_certified",
+  "architecture": "frozen native SuperMimic foundation + separately trained skateboard skill; explicit task selection",
+  "algorithm": "fresh random student behavior cloning + DAgger on real native29 CPU physics",
+  "foundation_iteration": 7000,
+  "foundation_parameters": 9116477,
+  "skateboard_parameters": 370717,
+  "training_rounds": 8,
+  "gradient_updates": 13500,
+  "replay_samples": 76216,
+  "training_wall_seconds_through_final_development": 140.0628785151057,
+  "observed_process_peak_mib": 1028,
+  "new_download_bytes": 0,
+  "inference_expert_required": false,
+  "cuda_training_finished": true,
+  "config": {
+    "native": "/home/tcl/Desktop/start/HoloMotion-UM/runs/g1_supermimic_baseline_20261023_seed0/last.pt",
+    "expert": "/home/tcl/Desktop/start/humanoid_skateboarding/ckpts/test.onnx",
+    "output": "runs/g1_skateboard_dagger_20261023_seed1729",
+    "device": "cuda:0",
+    "seed": 1729,
+    "initial_episodes": 20,
+    "dagger_episodes": 10,
+    "rounds": 14,
+    "initial_updates": 3000,
+    "updates": 1500,
+    "batch": 512,
+    "lr": 0.0003,
+    "initialization": "random_student_weights_no_expert_weight_copy",
+    "algorithm": "behavior_cloning_then_real_physics_DAgger",
+    "expert_sha256": "7cde18b68d86b67c2e9b2e06c38851c791903980687e1d4ba1c6302aadcf791f",
+    "foundation_sha256": "a82df576443e9fc81f8add9703e91c423798e0c7d8fad30b55a4541426d8321d",
+    "task": "autonomous_push_and_skate",
+    "command_speed": 1.0,
+    "command_heading": 0.0,
+    "certification_used_for_selection": false,
+    "new_download_bytes": 0,
+    "allocator_cap_mib": 2048,
+    "process_guard_mib": 3800
+  },
+  "certified_checkpoint": {
+    "checkpoint": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/runs/g1_skateboard_dagger_20261023_seed1729/certified_skateboard_v1.pt",
+    "sha256": "e057ec6aec425b2a0ddb5a2ef10ad75d9b80cffc90e92f7c9d3e5faf94e56459",
+    "foundation_sha256": "a82df576443e9fc81f8add9703e91c423798e0c7d8fad30b55a4541426d8321d",
+    "certified_skill_sha256": {
+      "skateboard": "600a38949818ef68e8ec5aa57fcfbc0d69e3e59fea5747d756380287b4fffd8b"
+    },
+    "certification": {
+      "checked_at_utc": "2026-10-23T09:09:54.372377+00:00",
+      "evaluated_candidate_sha256": "7b1a3b0dec96a9ee93c0dedb8ec1c23379da731a55b71cb0372ba6c172c86b4b",
+      "physical_report": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/outputs/skateboard_student_certification_20261023.json",
+      "physical_report_sha256": "70186fe43ada55458fd5fe1a95b242e3652f99cb0aac60ba431f46a1ccbd30de",
+      "retention_report": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/outputs/skateboard_student_retention_20261023.json",
+      "retention_report_sha256": "a9a144ba5f2b871c9b4af3186a91fc71bb482a792bbf330de816977c843b58b3",
+      "criteria": {
+        "minimum_duration_s": 30.0,
+        "settling_grace_s": 0.2,
+        "tail_duration_s": 5.0,
+        "active_normal_force_n": 5.0,
+        "minimum_pelvis_above_board_m": 0.45,
+        "minimum_pelvis_up_dot_world_up": 0.65,
+        "minimum_right_foot_board_fraction": 0.8,
+        "minimum_right_foot_board_tail_fraction": 0.8,
+        "maximum_no_foot_board_gap_s": 0.3,
+        "maximum_right_foot_ground_gap_s": 0.06,
+        "maximum_robot_board_xy_distance_m": 0.65,
+        "minimum_board_forward_progress_m": 5.0,
+        "maximum_unintended_support_frames": 0,
+        "maximum_physics_warning_count": 0
+      },
+      "resets": [
+        {
+          "name": "nominal",
+          "root_xy_m": [
+            0.0,
+            0.0
+          ],
+          "root_roll_pitch_rad": [
+            0.0,
+            0.0
+          ],
+          "root_xy_velocity_m_s": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "offset_front_left",
+          "root_xy_m": [
+            0.01,
+            0.01
+          ],
+          "root_roll_pitch_rad": [
+            0.0,
+            0.0
+          ],
+          "root_xy_velocity_m_s": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "offset_front_right",
+          "root_xy_m": [
+            0.01,
+            -0.01
+          ],
+          "root_roll_pitch_rad": [
+            0.0,
+            0.0
+          ],
+          "root_xy_velocity_m_s": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "offset_rear_left",
+          "root_xy_m": [
+            -0.01,
+            0.01
+          ],
+          "root_roll_pitch_rad": [
+            0.0,
+            0.0
+          ],
+          "root_xy_velocity_m_s": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "offset_rear_right",
+          "root_xy_m": [
+            -0.01,
+            -0.01
+          ],
+          "root_roll_pitch_rad": [
+            0.0,
+            0.0
+          ],
+          "root_xy_velocity_m_s": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "tilt_positive",
+          "root_xy_m": [
+            0.0,
+            0.0
+          ],
+          "root_roll_pitch_rad": [
+            0.015,
+            0.015
+          ],
+          "root_xy_velocity_m_s": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "tilt_negative",
+          "root_xy_m": [
+            0.0,
+            0.0
+          ],
+          "root_roll_pitch_rad": [
+            -0.015,
+            -0.015
+          ],
+          "root_xy_velocity_m_s": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "velocity_forward_left",
+          "root_xy_m": [
+            0.0,
+            0.0
+          ],
+          "root_roll_pitch_rad": [
+            0.0,
+            0.0
+          ],
+          "root_xy_velocity_m_s": [
+            0.03,
+            0.03
+          ]
+        },
+        {
+          "name": "velocity_backward_right",
+          "root_xy_m": [
+            0.0,
+            0.0
+          ],
+          "root_roll_pitch_rad": [
+            0.0,
+            0.0
+          ],
+          "root_xy_velocity_m_s": [
+            -0.03,
+            -0.03
+          ]
+        }
+      ],
+      "regression_policy": "Keep foundation and certified skill parameters/statistics frozen; require the full saved physical suite before accepting any new skill bundle"
+    },
+    "new_download_bytes": 0
+  },
+  "physical_evaluation": {
+    "standard_resets": 1,
+    "unseen_reset_perturbations": 8,
+    "passed": 9,
+    "total": 9,
+    "seconds_each": 30.0,
+    "rows": [
+      {
+        "name": "nominal",
+        "success": true,
+        "duration_s": 29.999999999998316,
+        "board_forward_progress_m": 40.71468543828001,
+        "minimum_pelvis_above_board_m": 0.5771838346540972,
+        "right_foot_board_fraction": 0.9946308724832215,
+        "right_foot_board_tail_fraction": 0.996,
+        "maximum_no_board_contact_gap_s": 0.019999999999999574,
+        "unintended_support_frames": 0,
+        "failures": []
+      },
+      {
+        "name": "offset_front_left",
+        "success": true,
+        "duration_s": 29.999999999998316,
+        "board_forward_progress_m": 41.410123438194304,
+        "minimum_pelvis_above_board_m": 0.5742338702212563,
+        "right_foot_board_fraction": 0.9926174496644296,
+        "right_foot_board_tail_fraction": 0.996,
+        "maximum_no_board_contact_gap_s": 0.019999999999999574,
+        "unintended_support_frames": 0,
+        "failures": []
+      },
+      {
+        "name": "offset_front_right",
+        "success": true,
+        "duration_s": 29.999999999998316,
+        "board_forward_progress_m": 41.60281052066548,
+        "minimum_pelvis_above_board_m": 0.5612908373452925,
+        "right_foot_board_fraction": 0.9932885906040269,
+        "right_foot_board_tail_fraction": 1.0,
+        "maximum_no_board_contact_gap_s": 0.019999999999999574,
+        "unintended_support_frames": 0,
+        "failures": []
+      },
+      {
+        "name": "offset_rear_left",
+        "success": true,
+        "duration_s": 29.999999999998316,
+        "board_forward_progress_m": 39.87077799351093,
+        "minimum_pelvis_above_board_m": 0.5760684547976919,
+        "right_foot_board_fraction": 0.9926174496644296,
+        "right_foot_board_tail_fraction": 0.988,
+        "maximum_no_board_contact_gap_s": 0.019999999999999574,
+        "unintended_support_frames": 0,
+        "failures": []
+      },
+      {
+        "name": "offset_rear_right",
+        "success": true,
+        "duration_s": 29.999999999998316,
+        "board_forward_progress_m": 42.12928150711815,
+        "minimum_pelvis_above_board_m": 0.5547194167360862,
+        "right_foot_board_fraction": 0.9932885906040269,
+        "right_foot_board_tail_fraction": 0.988,
+        "maximum_no_board_contact_gap_s": 0.019999999999999574,
+        "unintended_support_frames": 0,
+        "failures": []
+      },
+      {
+        "name": "tilt_positive",
+        "success": true,
+        "duration_s": 29.999999999998316,
+        "board_forward_progress_m": 41.77068987308901,
+        "minimum_pelvis_above_board_m": 0.5722740109971372,
+        "right_foot_board_fraction": 0.9946308724832215,
+        "right_foot_board_tail_fraction": 0.992,
+        "maximum_no_board_contact_gap_s": 0.019999999999999574,
+        "unintended_support_frames": 0,
+        "failures": []
+      },
+      {
+        "name": "tilt_negative",
+        "success": true,
+        "duration_s": 29.999999999998316,
+        "board_forward_progress_m": 41.341560912087544,
+        "minimum_pelvis_above_board_m": 0.560083493975256,
+        "right_foot_board_fraction": 0.9953020134228188,
+        "right_foot_board_tail_fraction": 0.992,
+        "maximum_no_board_contact_gap_s": 0.019999999999999574,
+        "unintended_support_frames": 0,
+        "failures": []
+      },
+      {
+        "name": "velocity_forward_left",
+        "success": true,
+        "duration_s": 29.999999999998316,
+        "board_forward_progress_m": 41.497446518772925,
+        "minimum_pelvis_above_board_m": 0.5755751024714203,
+        "right_foot_board_fraction": 0.9932885906040269,
+        "right_foot_board_tail_fraction": 0.992,
+        "maximum_no_board_contact_gap_s": 0.019999999999999574,
+        "unintended_support_frames": 0,
+        "failures": []
+      },
+      {
+        "name": "velocity_backward_right",
+        "success": true,
+        "duration_s": 29.999999999998316,
+        "board_forward_progress_m": 41.913498303420646,
+        "minimum_pelvis_above_board_m": 0.569734468488353,
+        "right_foot_board_fraction": 0.9926174496644296,
+        "right_foot_board_tail_fraction": 0.992,
+        "maximum_no_board_contact_gap_s": 0.019999999999999574,
+        "unintended_support_frames": 0,
+        "failures": []
+      }
+    ],
+    "full_report": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/outputs/skateboard_student_certification_20261023.json"
+  },
+  "native_retention": {
+    "native_base_tensors_checked": 26,
+    "native_base_tensors_exact": true,
+    "normalization_exact": true,
+    "sample_count": 160,
+    "clip_count": 40,
+    "sampled_actions_bitwise_equal": true,
+    "max_sampled_abs_action_error": 0.0,
+    "physical_clip_count": 3,
+    "physical_total_steps": 1500,
+    "physical_rollouts_bitwise_equal": true,
+    "passed": true
+  },
+  "video": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/outputs/supermimic.mp4",
+  "limitations": [
+    "Validated one straight-line skill under small initial-state perturbations only",
+    "Not speed-command tracking or arbitrary terrain robustness",
+    "Current progressive skill bundle does not fuse skateboard behavior into shared World Model training",
+    "Other interaction tasks remain uncertified; original baseline retained, not improved by this run"
+  ],
+  "license": "HUSKY-derived components and local expert provenance: CC BY-NC 4.0",
+  "verification": {
+    "cpu_tests_passed": 105,
+    "pytest_wall_seconds": 5.58,
+    "git_diff_check_passed": true,
+    "training_processes_remaining": 0,
+    "nvidia_compute_processes_after_completion": [],
+    "certified_file_parameters_identical_to_evaluated_candidate": true
+  },
+  "video_presentation": {
+    "title": "supermimic",
+    "render_record": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/outputs/supermimic_render.json",
+    "headlight_ambient": 0.55,
+    "headlight_diffuse": 0.8,
+    "headlight_specular": 0.12,
+    "trajectory_unchanged": true
+  }
+}

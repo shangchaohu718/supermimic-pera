@@ -1,0 +1,66 @@
+<mujoco model="HUSKY articulated skateboard (CC BY-NC 4.0)">
+  <!--Extracted from TeleHuman/humanoid_skateboarding d93833e80deff7f927c0b80ef9c435d8b5c488fe test_scene/mjlab_scene.xml. See husky_skateboard.source.json and LICENSES/HUSKY-CC-BY-NC-4.0.md.-->
+  <default>
+    <default class="skateboard/main">
+      <default class="skateboard/wheel_geom">
+        <geom size="0.03 0.02 0" type="cylinder" />
+      </default>
+    </default>
+  </default>
+  <worldbody>
+    <body name="skateboard/skateboard_deck" pos="0 0 0.1">
+      <inertial pos="0 0 0" mass="1.5" diaginertia="0.005 0.08 0.085" />
+      <joint name="skateboard/floating_base_joint_skateboard" type="free" />
+      <body name="skateboard/board_tilt_body">
+        <joint name="skateboard/board_tilt_joint" pos="0 0 0" axis="-1 0 0" range="-0.2 0.2" />
+        <geom name="skateboard/skateboard_deck_collision" size="0.4 0.1 0.01" type="box" priority="1" />
+        <geom name="skateboard/skateboard_marker_collision" size="0.15 0.075 0.005" pos="-0.2 0 0.005" type="box" priority="1" />
+        <site name="skateboard/rear_marker" pos="-0.2 -0.03 0" size="0.025" />
+        <site name="skateboard/front_marker" pos="0.2 -0.03 0" size="0.025" />
+      </body>
+      <body name="skateboard/front_truck" pos="0.2 0 0.02">
+        <inertial pos="0 0 -0.09" quat="0.707388 0 0 0.706825" mass="0.5" diaginertia="0.00043 3.3e-05 0.00043" />
+        <joint name="skateboard/front_truck_roll_joint" pos="0 0 0" axis="0 0 -1" range="-0.1 0.1" actuatorfrcrange="-20 20" />
+        <geom name="skateboard/front_truck_collision" size="0.05 0.01 0.01" pos="0 0 -0.09" quat="0.707388 0 0 0.706825" type="box" priority="1" />
+        <body name="skateboard/front_left_wheel" pos="0 0 -0.09">
+          <inertial pos="0 0.07 0" mass="0.2" diaginertia="1e-05 1e-05 1e-05" />
+          <joint name="skateboard/front_left_wheel_joint" pos="0 0 0" axis="0 1 0" actuatorfrcrange="-5 5" />
+          <geom name="skateboard/front_left_wheel_collision" class="skateboard/wheel_geom" pos="0 0.07 0" quat="0.707388 0.706825 0 0" condim="6" priority="1" friction="1 0.01 0.001" />
+        </body>
+        <body name="skateboard/front_right_wheel" pos="0 0 -0.09">
+          <inertial pos="0 -0.07 0" mass="0.2" diaginertia="1e-05 1e-05 1e-05" />
+          <joint name="skateboard/front_right_wheel_joint" pos="0 0 0" axis="0 1 0" actuatorfrcrange="-5 5" />
+          <geom name="skateboard/front_right_wheel_collision" class="skateboard/wheel_geom" pos="0 -0.07 0" quat="0.707388 0.706825 0 0" condim="6" priority="1" friction="1 0.01 0.001" />
+        </body>
+      </body>
+      <body name="skateboard/rear_truck" pos="-0.2 0 0.02">
+        <inertial pos="0 0 -0.09" quat="0.707388 0 0 0.706825" mass="0.5" diaginertia="0.00043 3.3e-05 0.00043" />
+        <joint name="skateboard/rear_truck_roll_joint" pos="0 0 0" axis="0 0 1" range="-0.1 0.1" actuatorfrcrange="-20 20" />
+        <geom name="skateboard/rear_truck_collision" size="0.05 0.01 0.01" pos="0 0 -0.09" quat="0.707388 0 0 0.706825" type="box" priority="1" />
+        <body name="skateboard/rear_left_wheel" pos="0 0 -0.09">
+          <inertial pos="0 0.07 0" mass="0.2" diaginertia="1e-05 1e-05 1e-05" />
+          <joint name="skateboard/rear_left_wheel_joint" pos="0 0 0" axis="0 1 0" actuatorfrcrange="-5 5" />
+          <geom name="skateboard/rear_left_wheel_collision" class="skateboard/wheel_geom" pos="0 0.07 0" quat="0.707388 0.706825 0 0" condim="6" priority="1" friction="1 0.01 0.001" />
+        </body>
+        <body name="skateboard/rear_right_wheel" pos="0 0 -0.09">
+          <inertial pos="0 -0.07 0" mass="0.2" diaginertia="1e-05 1e-05 1e-05" />
+          <joint name="skateboard/rear_right_wheel_joint" pos="0 0 0" axis="0 1 0" actuatorfrcrange="-5 5" />
+          <geom name="skateboard/rear_right_wheel_collision" class="skateboard/wheel_geom" pos="0 -0.07 0" quat="0.707388 0.706825 0 0" condim="6" priority="1" friction="1 0.01 0.001" />
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <equality>
+    <joint joint1="skateboard/board_tilt_joint" joint2="skateboard/front_truck_roll_joint" polycoef="0 -0.577 0 0 0" />
+    <joint joint1="skateboard/board_tilt_joint" joint2="skateboard/rear_truck_roll_joint" polycoef="0 -0.577 0 0 0" />
+  </equality>
+  <actuator>
+    <general name="skateboard/board_tilt_joint" joint="skateboard/board_tilt_joint" ctrllimited="false" forcelimited="false" biastype="affine" gainprm="14.67" biasprm="0 -14.67 -0.402" />
+    <general name="skateboard/front_truck_roll_joint" joint="skateboard/front_truck_roll_joint" ctrllimited="false" forcelimited="true" forcerange="-20 20" biastype="affine" gainprm="10" biasprm="0 -10 -0.5" />
+    <general name="skateboard/rear_truck_roll_joint" joint="skateboard/rear_truck_roll_joint" ctrllimited="false" forcelimited="true" forcerange="-20 20" biastype="affine" gainprm="10" biasprm="0 -10 -0.5" />
+    <general name="skateboard/front_left_wheel_joint" joint="skateboard/front_left_wheel_joint" ctrllimited="false" forcelimited="true" forcerange="-3 3" biastype="affine" gainprm="0" />
+    <general name="skateboard/front_right_wheel_joint" joint="skateboard/front_right_wheel_joint" ctrllimited="false" forcelimited="true" forcerange="-3 3" biastype="affine" gainprm="0" />
+    <general name="skateboard/rear_left_wheel_joint" joint="skateboard/rear_left_wheel_joint" ctrllimited="false" forcelimited="true" forcerange="-3 3" biastype="affine" gainprm="0" />
+    <general name="skateboard/rear_right_wheel_joint" joint="skateboard/rear_right_wheel_joint" ctrllimited="false" forcelimited="true" forcerange="-3 3" biastype="affine" gainprm="0" />
+  </actuator>
+</mujoco>

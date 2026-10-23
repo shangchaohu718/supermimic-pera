@@ -1,0 +1,363 @@
+{
+  "purpose": "CPU scene/contact integration; no policy training or balance claim",
+  "device": "CPU",
+  "mujoco_version": "3.11.0",
+  "download_bytes": 0,
+  "model": {
+    "nq": 50,
+    "nv": 48,
+    "nu": 36,
+    "policy_actions": 29
+  },
+  "board_source": {
+    "repository": "https://github.com/TeleHuman/humanoid_skateboarding",
+    "commit": "d93833e80deff7f927c0b80ef9c435d8b5c488fe",
+    "source": "test_scene/mjlab_scene.xml",
+    "source_sha256": "50be27c7a82cd5f0965e552eb7eb8cf321747daf6de3ae5537bb27c12a6acf1d",
+    "extracted_sha256": "bb5e86ca4cc68c768a52999018792a36817390b89ca5d23f1b0b1ea3d322bb95",
+    "license": "CC-BY-NC-4.0",
+    "extraction": "skateboard/main default, skateboard/skateboard_deck subtree, skateboard equality joints and actuators; no numeric changes",
+    "variant": "Exported demo scene, matching locally evaluated test.onnx. Training Python spring parameters differ."
+  },
+  "board_xml_sha256": "bb5e86ca4cc68c768a52999018792a36817390b89ca5d23f1b0b1ea3d322bb95",
+  "scenarios": {
+    "board": {
+      "simulated_seconds": 1.9999999999999793,
+      "load_contacts_at_0_4s": {
+        "left_foot_board": {
+          "count": 4,
+          "active_count": 4,
+          "normal_force": 162.54280325620275,
+          "force_world": [
+            0.6564907789610567,
+            4.691030182517012,
+            162.91464562758523
+          ],
+          "points_world": [
+            [
+              -0.1434760867848935,
+              -0.08681557644246513,
+              0.10523080236621281
+            ],
+            [
+              -0.09347608685829505,
+              -0.0868162330200564,
+              0.10523250157666089
+            ],
+            [
+              -0.14847411646594613,
+              0.08301418128816444,
+              0.11283817270409313
+            ],
+            [
+              -0.08847411655402791,
+              0.08301339339505492,
+              0.11284021175663084
+            ]
+          ],
+          "max_tangential_speed": 0.0024313910651318025
+        },
+        "right_foot_board": {
+          "count": 4,
+          "active_count": 4,
+          "normal_force": 162.2775394064795,
+          "force_world": [
+            -0.6835020707349353,
+            4.6689301490110635,
+            162.64811422053722
+          ],
+          "points_world": [
+            [
+              0.09362806333151585,
+              -0.08683591447083623,
+              0.10523438359827833
+            ],
+            [
+              0.14362806250145504,
+              -0.08684445853136821,
+              0.10523294370758188
+            ],
+            [
+              0.08865730497945307,
+              0.0829946355759168,
+              0.11284193323031302
+            ],
+            [
+              0.14865730398338003,
+              0.08298438270327843,
+              0.11284020536147726
+            ]
+          ],
+          "max_tangential_speed": 0.0024292386223221784
+        },
+        "left_foot_ground": {
+          "count": 0,
+          "active_count": 0,
+          "normal_force": 0.0,
+          "force_world": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "points_world": [],
+          "max_tangential_speed": 0.0
+        },
+        "right_foot_ground": {
+          "count": 0,
+          "active_count": 0,
+          "normal_force": 0.0,
+          "force_world": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "points_world": [],
+          "max_tangential_speed": 0.0
+        },
+        "wheel_ground": {
+          "count": 8,
+          "active_count": 8,
+          "normal_force": 393.7409946885727,
+          "force_world": [
+            -0.0054254697147499975,
+            9.329171267294042,
+            393.7409946885727
+          ],
+          "points_world": [
+            [
+              0.20554704707454302,
+              0.08921173167393287,
+              -0.00027533202778412405
+            ],
+            [
+              0.20312207970119,
+              0.049285306586276396,
+              -0.00027001794432038794
+            ],
+            [
+              0.19704884406436035,
+              -0.05053008139081628,
+              -0.00031194577511601347
+            ],
+            [
+              0.19461518092173508,
+              -0.0904559773837646,
+              -0.0003066337956226002
+            ],
+            [
+              -0.20536598630534764,
+              0.08925398853167871,
+              -0.0002767213428343972
+            ],
+            [
+              -0.20294701392974468,
+              0.049327199793472665,
+              -0.0002713898154416552
+            ],
+            [
+              -0.19688889508773375,
+              -0.05048908743780006,
+              -0.00031327109656729924
+            ],
+            [
+              -0.19446107290782408,
+              -0.09041533903249438,
+              -0.0003079546148321501
+            ]
+          ],
+          "max_tangential_speed": 0.0028382351923791054
+        }
+      },
+      "minimum_pelvis_height_over_2s": 0.08664812385141447,
+      "fell_below_0_45m_with_fixed_PD": true,
+      "note": "Fixed PD has no learned balance; later falling is expected and recorded, not hidden.",
+      "checks": {
+        "both_feet_load_expected_surface": true,
+        "no_contact_with_other_surface": true,
+        "wheel_ground_force_positive": true,
+        "no_numerical_warnings": true,
+        "finite_state": true
+      },
+      "contact_check_time_s": 0.4,
+      "numerical_check_duration_s": 1.9999999999999793
+    },
+    "ground": {
+      "simulated_seconds": 1.9999999999999793,
+      "load_contacts_at_0_4s": {
+        "left_foot_board": {
+          "count": 0,
+          "active_count": 0,
+          "normal_force": 0.0,
+          "force_world": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "points_world": [],
+          "max_tangential_speed": 0.0
+        },
+        "right_foot_board": {
+          "count": 0,
+          "active_count": 0,
+          "normal_force": 0.0,
+          "force_world": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "points_world": [],
+          "max_tangential_speed": 0.0
+        },
+        "left_foot_ground": {
+          "count": 4,
+          "active_count": 4,
+          "normal_force": 162.38317828195494,
+          "force_world": [
+            0.6488219777999369,
+            5.869276194377491,
+            162.38317828195494
+          ],
+          "points_world": [
+            [
+              -0.14354056429831769,
+              -0.08536350154972236,
+              -0.00028978695953398373
+            ],
+            [
+              -0.09354056434672517,
+              -0.08536196661286301,
+              -0.0002889988100959421
+            ],
+            [
+              -0.14854578360172258,
+              0.0846363440671925,
+              -0.00028157188266145564
+            ],
+            [
+              -0.08854578365981154,
+              0.08463818599142373,
+              -0.000280626103335806
+            ]
+          ],
+          "max_tangential_speed": 0.0011718100865473703
+        },
+        "right_foot_ground": {
+          "count": 4,
+          "active_count": 4,
+          "normal_force": 162.22559725675882,
+          "force_world": [
+            -0.698999774418823,
+            5.851654026999489,
+            162.22559725675882
+          ],
+          "points_world": [
+            [
+              0.09354378367706569,
+              -0.085362103502407,
+              -0.00028827846960029387
+            ],
+            [
+              0.14354378353330483,
+              -0.08536346754664825,
+              -0.0002900473300529189
+            ],
+            [
+              0.08854842260100612,
+              0.08463803204932607,
+              -0.00027991019392331097
+            ],
+            [
+              0.14854842242849306,
+              0.08463639519623659,
+              -0.000282032826466461
+            ]
+          ],
+          "max_tangential_speed": 0.0011739259751724193
+        },
+        "wheel_ground": {
+          "count": 8,
+          "active_count": 8,
+          "normal_force": 68.17950228217306,
+          "force_world": [
+            3.7707481251869623e-06,
+            4.729800681113616e-07,
+            68.17950228217306
+          ],
+          "points_world": [
+            [
+              2.200001864545307,
+              0.08997723894016048,
+              -7.920953489542803e-05
+            ],
+            [
+              2.200001858183105,
+              0.04997724979394268,
+              -6.447604907633978e-05
+            ],
+            [
+              2.2000018386477995,
+              -0.0500227608117961,
+              -8.337650554330391e-05
+            ],
+            [
+              2.2000018317243697,
+              -0.09002274995801379,
+              -6.864301971685067e-05
+            ],
+            [
+              1.800002044619507,
+              0.08997770951760063,
+              -8.768679934506891e-05
+            ],
+            [
+              1.8000019602112738,
+              0.04997772037146876,
+              -7.295331531619777e-05
+            ],
+            [
+              1.8000017371132422,
+              -0.05002229023403111,
+              -9.185377596190896e-05
+            ],
+            [
+              1.8000016524227733,
+              -0.09002227938016237,
+              -7.712029191819417e-05
+            ]
+          ],
+          "max_tangential_speed": 2.738990640112309e-07
+        }
+      },
+      "minimum_pelvis_height_over_2s": 0.07263048914006534,
+      "fell_below_0_45m_with_fixed_PD": true,
+      "note": "Fixed PD has no learned balance; later falling is expected and recorded, not hidden.",
+      "checks": {
+        "both_feet_load_expected_surface": true,
+        "no_contact_with_other_surface": true,
+        "wheel_ground_force_positive": true,
+        "no_numerical_warnings": true,
+        "finite_state": true
+      },
+      "contact_check_time_s": 0.4,
+      "numerical_check_duration_s": 1.9999999999999793
+    }
+  },
+  "all_integration_checks_passed": true,
+  "training_runtime_imported": false,
+  "tests": {
+    "passed": 12,
+    "failed": 0,
+    "files": [
+      "tests/test_skateboard_contacts.py",
+      "tests/test_skateboard_physics.py",
+      "tests/test_skateboard_scene.py"
+    ]
+  },
+  "optional_snapshot_rendering": {
+    "renderer": "llvmpipe (LLVM 15.0.7, 256 bits)",
+    "source": "board_load_pose.npz",
+    "time_s": 0.4,
+    "cuda_visible_devices": "",
+    "visual_only_changes": "Headlight brightness and deck color adjusted for legibility; physics and state unchanged."
+  }
+}

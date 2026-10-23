@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/TeleHuman/humanoid_skateboarding",
+  "commit": "d93833e80deff7f927c0b80ef9c435d8b5c488fe",
+  "source": "test_scene/mjlab_scene.xml",
+  "source_sha256": "50be27c7a82cd5f0965e552eb7eb8cf321747daf6de3ae5537bb27c12a6acf1d",
+  "extracted_sha256": "bb5e86ca4cc68c768a52999018792a36817390b89ca5d23f1b0b1ea3d322bb95",
+  "license": "CC-BY-NC-4.0",
+  "extraction": "skateboard/main default, skateboard/skateboard_deck subtree, skateboard equality joints and actuators; no numeric changes",
+  "variant": "Exported demo scene, matching locally evaluated test.onnx. Training Python spring parameters differ."
+}

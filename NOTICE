@@ -20,3 +20,23 @@ ceafbc863c52b3d613d0e19976794c5a31b9b402, preserving the upstream history
 and license notices. Added offline environment integration, local-data G1
 baseline launch and evaluation orchestration, and experiment reports.
 The native SuperMimic training algorithm is retained.
+
+HUSKY skateboard asset and demonstration adapter
+
+src/unisupermimic/assets/objects/husky_skateboard.xml is extracted from
+TeleHuman/humanoid_skateboarding, commit
+d93833e80deff7f927c0b80ef9c435d8b5c488fe, test_scene/mjlab_scene.xml.
+https://github.com/TeleHuman/humanoid_skateboarding
+The HUSKY asset and tools/husky_cpu_demo.py (adapted from test_scene/sim.py)
+are governed by CC BY-NC 4.0, preserved in LICENSES/HUSKY-CC-BY-NC-4.0.md,
+not by the repository's general Apache-2.0 license. See the adjacent asset
+source manifest for exact provenance and hashes. HUSKY policy weights and
+robot meshes are not included by this integration.
+
+The optional HUSKY capsule foot geometry in interaction/multitask_scene.py,
+observation and action conventions in interaction/skateboard_skill.py, and
+tools/probe_husky_transfer.py are also adaptations of the same HUSKY source
+under CC BY-NC 4.0. The first skateboard student is trained locally from that
+expert's demonstrations and DAgger labels. Its local provenance and noncommercial
+source restrictions are recorded with the checkpoint and evaluation artifacts.
+These additions do not relicense HUSKY-derived material as Apache-2.0.

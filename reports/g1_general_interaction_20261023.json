@@ -1,0 +1,432 @@
+{
+  "stage": "general interaction prototype, initial mixed training",
+  "training": {
+    "state": "completed",
+    "pid": 2489804,
+    "iteration": 1000,
+    "elapsed_seconds": 344.84530663490295,
+    "process_gpu_mib": 582,
+    "peak_process_gpu_mib": 582,
+    "torch_peak_allocated_mib": 243.5126953125,
+    "replay_by_task": {
+      "tracking": 4000,
+      "stairs": 4000,
+      "box": 4000,
+      "box_obstacle": 4000,
+      "skateboard": 4000
+    },
+    "accepted": 4,
+    "rejected": 17,
+    "wm_loss": 0.11009986698627472,
+    "critic_loss": 20.12531852722168,
+    "actor_loss": -73.47196960449219
+  },
+  "cpu_tests_passed": 60,
+  "downloads_bytes": 0,
+  "native_retention": {
+    "schema": 1,
+    "checked_at_utc": "2026-10-23T08:29:29.239085+00:00",
+    "device": "cpu",
+    "cuda_initialized": false,
+    "new_download_bytes": 0,
+    "native_sha256": "a82df576443e9fc81f8add9703e91c423798e0c7d8fad30b55a4541426d8321d",
+    "native_iteration": 7000,
+    "candidate_sha256": "babab193a05053eb100cf530b00e806f0d02b8bee0604fdb797da7a3219516e8",
+    "candidate_iteration": 1000,
+    "recorded_foundation_matches": true,
+    "native_base_tensors_checked": 26,
+    "native_base_tensors_exact": true,
+    "normalization_tensors_checked": [
+      "goal_norm.count",
+      "goal_norm.mean",
+      "goal_norm.var",
+      "obs_norm.count",
+      "obs_norm.mean",
+      "obs_norm.var"
+    ],
+    "normalization_exact": true,
+    "mismatched_native_tensors": [],
+    "clip_count": 40,
+    "sample_count": 160,
+    "actions_bitwise_equal": true,
+    "max_abs_action_error": 0.0,
+    "passed": true,
+    "sample_protocol": "Four evenly spaced frames per clip; ten real reference states per observation history; zero previous actions; random finite interaction context; interaction_mask=0",
+    "scope": "Native tracking parameters/statistics and sampled action-map retention only; no full physical rollouts or new interaction skill retention claim"
+  },
+  "physical_evaluation": {
+    "schema": 1,
+    "backend": "mujoco_cpu",
+    "policy_device": "cpu",
+    "cuda_visible_devices": "",
+    "amp_dtype": null,
+    "new_download_bytes": 0,
+    "elapsed_seconds": 5.641232226975262,
+    "provenance": {
+      "native_checkpoint": "/home/tcl/Desktop/start/HoloMotion-UM/runs/g1_supermimic_baseline_20261023_seed0/last.pt",
+      "native_sha256": "a82df576443e9fc81f8add9703e91c423798e0c7d8fad30b55a4541426d8321d",
+      "native_iteration": 7000,
+      "interaction_checkpoint": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/runs/g1_general_interaction_20261023_seed42/accepted.pt",
+      "interaction_sha256": "babab193a05053eb100cf530b00e806f0d02b8bee0604fdb797da7a3219516e8",
+      "interaction_iteration": 1000,
+      "checkpoint_schema": 2,
+      "frozen_foundation_identical": true
+    },
+    "criteria": {
+      "fall": {
+        "pelvis_above_support_below_m": 0.35,
+        "pelvis_up_dot_world_up_below": 0.45
+      },
+      "palm_contact_active_normal_force_above_n": 5.0,
+      "box": {
+        "box_center_lift_above_initial_m": 0.1,
+        "simultaneous_both_palm_contact_and_lift_consecutive_frames": 10,
+        "no_fall_entire_rollout": true
+      },
+      "box_obstacle": {
+        "robot_and_box_final_world_x_above_m": 1.22,
+        "box_final_center_z_above_m": 0.28,
+        "simultaneous_both_palm_contact_and_lift_consecutive_frames": 10,
+        "no_fall_entire_rollout": true
+      },
+      "stairs": {
+        "robot_final_world_x_above_m": 1.88,
+        "robot_final_world_z_above_m": 0.95,
+        "no_fall_entire_rollout": true
+      },
+      "skateboard": {
+        "board_final_xy_displacement_above_m": 0.5,
+        "both_feet_on_board_fraction_at_least": 0.8,
+        "each_foot_active_normal_force_above_n": 5.0,
+        "no_fall_entire_rollout": true
+      }
+    },
+    "results": {
+      "stairs": {
+        "task": "stairs",
+        "reference": "walk1_subject1",
+        "success": false,
+        "scope": "One deterministic real CPU physics rollout; criteria do not establish general mastery",
+        "requested_steps": 512,
+        "completed_steps": 290,
+        "duration_s": 5.8,
+        "completed_horizon": false,
+        "fallen": true,
+        "fall_reason": "pelvis_below_support_threshold",
+        "dense_return": 455.65945123694837,
+        "root_initial_xyz": [
+          0.0004799999878741801,
+          -2.300000051036477e-05,
+          0.7965530157089233
+        ],
+        "root_final_xyz": [
+          1.3108120589537366,
+          0.22854582275445434,
+          0.5566363261044328
+        ],
+        "root_displacement_xyz": [
+          1.3103320589658625,
+          0.2285688227549647,
+          -0.23991668960449053
+        ],
+        "root_xy_displacement_m": 1.3301179690122629,
+        "root_min_height_m": 0.5566363261044328,
+        "root_max_height_m": 0.7965530157089233,
+        "physics_warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "scene_metadata": {
+          "task": "stairs",
+          "task_id": 1,
+          "seed": 123,
+          "robot_nq": 36,
+          "robot_nv": 35,
+          "action_dim": 29,
+          "object_state_dim": 27,
+          "control_dt_s": 0.02,
+          "physics_backend": "mujoco_cpu",
+          "assisted_grasp": false,
+          "box_mass_kg": null,
+          "stairs_rise_m": 0.08,
+          "obstacle_height_m": null
+        },
+        "trajectory": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/outputs/general_interaction_physical_20261023_trajectories/stairs.npz",
+        "model_xml": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/outputs/general_interaction_physical_20261023_trajectories/stairs.xml"
+      },
+      "box": {
+        "task": "box",
+        "reference": "box_1",
+        "success": false,
+        "scope": "One deterministic real CPU physics rollout; criteria do not establish general mastery",
+        "requested_steps": 512,
+        "completed_steps": 512,
+        "duration_s": 10.24,
+        "completed_horizon": true,
+        "fallen": false,
+        "fall_reason": null,
+        "dense_return": 783.4347647428513,
+        "root_initial_xyz": [
+          -3.8536185456905514e-05,
+          -0.0001896028988994658,
+          0.7780911326408386
+        ],
+        "root_final_xyz": [
+          0.08430628942143144,
+          -0.0013726571583616894,
+          0.7838427854257075
+        ],
+        "root_displacement_xyz": [
+          0.08434482560688834,
+          -0.0011830542594622236,
+          0.005751652784868888
+        ],
+        "root_xy_displacement_m": 0.08435312219495636,
+        "root_min_height_m": 0.4170465346342077,
+        "root_max_height_m": 0.78913537971755,
+        "physics_warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "scene_metadata": {
+          "task": "box",
+          "task_id": 2,
+          "seed": 123,
+          "robot_nq": 36,
+          "robot_nv": 35,
+          "action_dim": 29,
+          "object_state_dim": 27,
+          "control_dt_s": 0.02,
+          "physics_backend": "mujoco_cpu",
+          "assisted_grasp": false,
+          "box_mass_kg": 2,
+          "stairs_rise_m": null,
+          "obstacle_height_m": null
+        },
+        "object_initial_xyz": [
+          0.5114291906356812,
+          -0.002219987800344825,
+          0.1809999942779541
+        ],
+        "object_final_xyz": [
+          0.5162449424723736,
+          -0.0035848062829190864,
+          0.17989224457978376
+        ],
+        "object_displacement_xyz": [
+          0.004815751836692472,
+          -0.0013648184825742616,
+          -0.001107749698170346
+        ],
+        "object_xy_displacement_m": 0.005005416590353217,
+        "box_max_center_lift_above_initial_m": 0.0,
+        "box_final_center_lift_above_initial_m": -0.001107749698170346,
+        "palm_contact_frames": {
+          "left": 44,
+          "right": 29
+        },
+        "palm_peak_normal_force_n": {
+          "left": 174.76988901014158,
+          "right": 94.4022084533553
+        },
+        "both_palm_contact_max_consecutive_frames": 5,
+        "lifted_both_palm_contact_max_consecutive_frames": 0,
+        "robot_past_obstacle": false,
+        "box_past_obstacle": false,
+        "trajectory": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/outputs/general_interaction_physical_20261023_trajectories/box.npz",
+        "model_xml": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/outputs/general_interaction_physical_20261023_trajectories/box.xml"
+      },
+      "box_obstacle": {
+        "task": "box_obstacle",
+        "reference": "box_1",
+        "success": false,
+        "scope": "One deterministic real CPU physics rollout; criteria do not establish general mastery",
+        "requested_steps": 512,
+        "completed_steps": 512,
+        "duration_s": 10.24,
+        "completed_horizon": true,
+        "fallen": false,
+        "fall_reason": null,
+        "dense_return": 751.5808668136597,
+        "root_initial_xyz": [
+          -3.8536185456905514e-05,
+          -0.0001896028988994658,
+          0.7780911326408386
+        ],
+        "root_final_xyz": [
+          0.140949816256858,
+          -0.012073439729729931,
+          0.784194442809288
+        ],
+        "root_displacement_xyz": [
+          0.14098835244231492,
+          -0.011883836830830465,
+          0.0061033101684493385
+        ],
+        "root_xy_displacement_m": 0.1414883072985899,
+        "root_min_height_m": 0.41708668474173977,
+        "root_max_height_m": 0.7863697377804729,
+        "physics_warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "scene_metadata": {
+          "task": "box_obstacle",
+          "task_id": 3,
+          "seed": 123,
+          "robot_nq": 36,
+          "robot_nv": 35,
+          "action_dim": 29,
+          "object_state_dim": 27,
+          "control_dt_s": 0.02,
+          "physics_backend": "mujoco_cpu",
+          "assisted_grasp": false,
+          "box_mass_kg": 2,
+          "stairs_rise_m": null,
+          "obstacle_height_m": 0.12
+        },
+        "object_initial_xyz": [
+          0.5114291906356812,
+          -0.002219987800344825,
+          0.1809999942779541
+        ],
+        "object_final_xyz": [
+          0.5163188724784109,
+          -0.0037826818644784276,
+          0.17989224457978387
+        ],
+        "object_displacement_xyz": [
+          0.004889681842729754,
+          -0.0015626940641336028,
+          -0.001107749698170235
+        ],
+        "object_xy_displacement_m": 0.005133322633655461,
+        "box_max_center_lift_above_initial_m": 0.0,
+        "box_final_center_lift_above_initial_m": -0.001107749698170235,
+        "palm_contact_frames": {
+          "left": 40,
+          "right": 25
+        },
+        "palm_peak_normal_force_n": {
+          "left": 173.87544515312018,
+          "right": 89.14991754757224
+        },
+        "both_palm_contact_max_consecutive_frames": 4,
+        "lifted_both_palm_contact_max_consecutive_frames": 0,
+        "robot_past_obstacle": false,
+        "box_past_obstacle": false,
+        "trajectory": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/outputs/general_interaction_physical_20261023_trajectories/box_obstacle.npz",
+        "model_xml": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/outputs/general_interaction_physical_20261023_trajectories/box_obstacle.xml"
+      },
+      "skateboard": {
+        "task": "skateboard",
+        "reference": "board_stance",
+        "success": false,
+        "scope": "One deterministic real CPU physics rollout; criteria do not establish general mastery",
+        "requested_steps": 512,
+        "completed_steps": 512,
+        "duration_s": 10.24,
+        "completed_horizon": true,
+        "fallen": false,
+        "fall_reason": null,
+        "dense_return": 966.1107167005539,
+        "root_initial_xyz": [
+          1.0408340855860843e-17,
+          -0.033761851489543915,
+          0.8679974675178528
+        ],
+        "root_final_xyz": [
+          -0.11768940243794906,
+          -0.719991664870425,
+          0.7746740267827439
+        ],
+        "root_displacement_xyz": [
+          -0.11768940243794908,
+          -0.6862298133808811,
+          -0.0933234407351089
+        ],
+        "root_xy_displacement_m": 0.6962486281630725,
+        "root_min_height_m": 0.7434353357752178,
+        "root_max_height_m": 0.8804616926699521,
+        "physics_warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "scene_metadata": {
+          "task": "skateboard",
+          "task_id": 4,
+          "seed": 123,
+          "robot_nq": 36,
+          "robot_nv": 35,
+          "action_dim": 29,
+          "object_state_dim": 27,
+          "control_dt_s": 0.02,
+          "physics_backend": "mujoco_cpu",
+          "assisted_grasp": false,
+          "box_mass_kg": null,
+          "stairs_rise_m": null,
+          "obstacle_height_m": null
+        },
+        "object_initial_xyz": [
+          0.0,
+          0.0,
+          0.1
+        ],
+        "object_final_xyz": [
+          -0.09338192621433096,
+          -0.0005419059288117526,
+          0.09984363533833204
+        ],
+        "object_displacement_xyz": [
+          -0.09338192621433096,
+          -0.0005419059288117526,
+          -0.0001563646616679626
+        ],
+        "object_xy_displacement_m": 0.09338349857193418,
+        "foot_board_contact_frames": {
+          "left": 126,
+          "right": 122
+        },
+        "both_feet_board_contact_fraction": 0.2265625,
+        "trajectory": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/outputs/general_interaction_physical_20261023_trajectories/skateboard.npz",
+        "model_xml": "/home/tcl/Desktop/start/HoloMotion-UM/third_party/Uni-SuperMimic/outputs/general_interaction_physical_20261023_trajectories/skateboard.xml"
+      }
+    },
+    "passed_task_count": 0,
+    "task_count": 4,
+    "limitations": [
+      "One deterministic start per task; no domain randomization",
+      "Flat box_1 prior is reused on the simple obstacle scene",
+      "The native 2 kg primitive box differs from VAIC's source box",
+      "Dense return is not a task-success criterion",
+      "This is inference-only evaluation; no training or parameter updates"
+    ]
+  },
+  "actor_last_unreverted_update_iteration": 150,
+  "checkpoint_iteration": 1000,
+  "notes": [
+    "17 rejected candidate updates were rolled back. Final accepted actor was re-evaluated after rollback at iteration1000.",
+    "No new interaction task met the explicit full-task criteria.",
+    "Native tracking action function is preserved; this is not a full 40-clip physical evaluation."
+  ]
+}
