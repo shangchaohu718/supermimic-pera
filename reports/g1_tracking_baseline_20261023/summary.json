@@ -1,0 +1,59 @@
+{
+  "state": "paused_by_user",
+  "paused_at": "2026-10-23T12:27:22+08:00",
+  "last_logged_iteration": 7275,
+  "resume_iteration": 7000,
+  "checkpoint_name": "last.pt",
+  "weights_in_git": false,
+  "source_base_commit": "ceafbc863c52b3d613d0e19976794c5a31b9b402",
+  "data": {
+    "source": "lvhaidong/LAFAN1_Retargeting_Dataset",
+    "robot": "G1 29DoF",
+    "clips": 40,
+    "source_frames": 264705
+  },
+  "initialization": "Random native networks; no pretrained checkpoint used",
+  "training_target_iterations": 12000,
+  "evaluations": [
+    {
+      "iteration": 500,
+      "norm_return": 0.0016525794053450227,
+      "norm_return_framew": 0.0015737831126898527,
+      "completed_clips": 0,
+      "failed_clips": 40
+    },
+    {
+      "iteration": 1000,
+      "norm_return": 0.3187873065471649,
+      "norm_return_framew": 0.33485254645347595,
+      "completed_clips": 20,
+      "failed_clips": 20
+    },
+    {
+      "iteration": 2000,
+      "norm_return": 0.525477409362793,
+      "norm_return_framew": 0.5519223213195801,
+      "completed_clips": 27,
+      "failed_clips": 13
+    },
+    {
+      "iteration": 4000,
+      "norm_return": 0.6331607103347778,
+      "norm_return_framew": 0.6626996994018555,
+      "completed_clips": 28,
+      "failed_clips": 12
+    },
+    {
+      "iteration": 6000,
+      "norm_return": 0.7156776785850525,
+      "norm_return_framew": 0.7292702794075012,
+      "completed_clips": 34,
+      "failed_clips": 6
+    }
+  ],
+  "limitations": [
+    "Tracking baseline is incomplete; final 12000-iteration evaluation is pending.",
+    "Native G1 task; interaction extensions are not implemented yet.",
+    "Resume requires separately retained local last.pt and replay recollection."
+  ]
+}

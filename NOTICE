@@ -11,3 +11,12 @@ preserved in LICENSES/MIT-supermimic.txt.
 SuperMimic paper:
 "SuperMimic: Scaling Humanoid Whole-Body Control with One Differentiable
 World Model", Qiayuan Liao et al., https://supermimic.github.io
+
+SuperMimic-PERA integration
+Copyright 2026 SuperMimic-PERA contributors
+
+Derived from Motphys/Uni-SuperMimic at upstream commit
+ceafbc863c52b3d613d0e19976794c5a31b9b402, preserving the upstream history
+and license notices. Added offline environment integration, local-data G1
+baseline launch and evaluation orchestration, and experiment reports.
+The native SuperMimic training algorithm is retained.

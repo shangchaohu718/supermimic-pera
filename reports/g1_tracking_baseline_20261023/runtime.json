@@ -1,0 +1,30 @@
+{
+  "versions": {
+    "torch": "2.12.1",
+    "unilab": "1.5.0",
+    "mujoco": "3.11.0",
+    "mujoco-warp": "3.11.0",
+    "warp-lang": "1.16.0",
+    "motrixsim-core": "0.10.1",
+    "triton": "3.7.1",
+    "tensordict": "0.15.2"
+  },
+  "torch_cuda": "13.0",
+  "gpu": "NVIDIA GeForce RTX 5080",
+  "profile": "Local overlay inheriting existing PyTorch/CUDA/Triton; not an exact upstream uv.lock installation",
+  "prior_tests": {
+    "passed": 83,
+    "skipped": 2,
+    "slow_deselected": 6
+  },
+  "resource_profile": {
+    "native_network_widths": true,
+    "history_steps": 10,
+    "goal_frames": 10,
+    "wm_window": 8,
+    "imagination_horizon": 32,
+    "batch_scale_from_native": 0.25,
+    "reason": "Share the 16 GB RTX 5080 with independent K1 work; scale environment and sample batches together",
+    "compile_threads": 1
+  }
+}

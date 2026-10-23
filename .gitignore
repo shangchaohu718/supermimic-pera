@@ -1,4 +1,9 @@
 .venv/
+.venv-local/
+.env
+.env.*
+!.env.example
+*.log
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -15,6 +20,8 @@ dist/
 logs/
 runs/
 outputs/
+data/
+checkpoints/
 *.pt
 src/unisupermimic/assets/robots/g1/assets/
 src/unisupermimic/assets/motions/

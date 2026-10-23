@@ -1,0 +1,33 @@
+{
+  "route": "g1_supermimic_tracking_baseline",
+  "description": "Local-data G1 tracking baseline before interaction development",
+  "upstream_commit": "ceafbc863c52b3d613d0e19976794c5a31b9b402",
+  "hydra_overrides": [
+    "task=g1_super_mimic/mjwarp",
+    "algo.seed=0",
+    "algo.num_envs=1024",
+    "algo.iterations=12000",
+    "algo.buffer_steps=1000",
+    "algo.wm_batch=512",
+    "algo.pi_batch=1024",
+    "algo.wm_only_iters=500",
+    "algo.compile=true",
+    "algo.ckpt_every=500",
+    "algo.log_every=25",
+    "training.no_play=true"
+  ],
+  "evaluation": {
+    "iterations": [500, 1000, 2000, 4000, 6000, 8000, 10000, 12000],
+    "protocol": "Native deterministic evaluation of all 40 complete clips from frame zero, without observation or action noise"
+  },
+  "resource_profile": {
+    "native_network_widths": true,
+    "history_steps": 10,
+    "goal_frames": 10,
+    "wm_window": 8,
+    "imagination_horizon": 32,
+    "batch_scale_from_native": 0.25,
+    "reason": "Share the 16 GB RTX 5080 with independent K1 work; scale environment and sample batches together",
+    "compile_threads": 1
+  }
+}

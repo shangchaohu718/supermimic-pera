@@ -1,0 +1,222 @@
+{
+  "norm_return": 0.525477409362793,
+  "norm_return_framew": 0.5519223213195801,
+  "n_failed": 13,
+  "failed": [
+    "dance1_subject1",
+    "dance2_subject4",
+    "fallAndGetUp1_subject1",
+    "fallAndGetUp1_subject4",
+    "fallAndGetUp1_subject5",
+    "fallAndGetUp2_subject2",
+    "fallAndGetUp2_subject3",
+    "fallAndGetUp3_subject1",
+    "fight1_subject3",
+    "jumps1_subject2",
+    "walk2_subject3",
+    "walk3_subject1",
+    "walk3_subject4"
+  ],
+  "per_clip": {
+    "dance1_subject1": {
+      "norm_return": 0.47059178352355957,
+      "steps": 5336,
+      "failed": true
+    },
+    "dance1_subject2": {
+      "norm_return": 0.5032949447631836,
+      "steps": 6573,
+      "failed": false
+    },
+    "dance1_subject3": {
+      "norm_return": 0.6249995231628418,
+      "steps": 6573,
+      "failed": false
+    },
+    "dance2_subject1": {
+      "norm_return": 0.5080032348632812,
+      "steps": 11283,
+      "failed": false
+    },
+    "dance2_subject2": {
+      "norm_return": 0.5403141379356384,
+      "steps": 11283,
+      "failed": false
+    },
+    "dance2_subject3": {
+      "norm_return": 0.6106345653533936,
+      "steps": 11283,
+      "failed": false
+    },
+    "dance2_subject4": {
+      "norm_return": 0.13840524852275848,
+      "steps": 2970,
+      "failed": true
+    },
+    "dance2_subject5": {
+      "norm_return": 0.6261537671089172,
+      "steps": 11283,
+      "failed": false
+    },
+    "fallAndGetUp1_subject1": {
+      "norm_return": 0.023842910304665565,
+      "steps": 308,
+      "failed": true
+    },
+    "fallAndGetUp1_subject4": {
+      "norm_return": 0.04481904208660126,
+      "steps": 805,
+      "failed": true
+    },
+    "fallAndGetUp1_subject5": {
+      "norm_return": 0.032990120351314545,
+      "steps": 438,
+      "failed": true
+    },
+    "fallAndGetUp2_subject2": {
+      "norm_return": 0.05237312987446785,
+      "steps": 756,
+      "failed": true
+    },
+    "fallAndGetUp2_subject3": {
+      "norm_return": 0.027564818039536476,
+      "steps": 346,
+      "failed": true
+    },
+    "fallAndGetUp3_subject1": {
+      "norm_return": 0.22697214782238007,
+      "steps": 1826,
+      "failed": true
+    },
+    "fight1_subject2": {
+      "norm_return": 0.5640266537666321,
+      "steps": 12243,
+      "failed": false
+    },
+    "fight1_subject3": {
+      "norm_return": 0.5357564687728882,
+      "steps": 10881,
+      "failed": true
+    },
+    "fight1_subject5": {
+      "norm_return": 0.6244617104530334,
+      "steps": 12243,
+      "failed": false
+    },
+    "fightAndSports1_subject1": {
+      "norm_return": 0.5509915947914124,
+      "steps": 12256,
+      "failed": false
+    },
+    "fightAndSports1_subject4": {
+      "norm_return": 0.5779719948768616,
+      "steps": 12256,
+      "failed": false
+    },
+    "jumps1_subject1": {
+      "norm_return": 0.6388481855392456,
+      "steps": 12221,
+      "failed": false
+    },
+    "jumps1_subject2": {
+      "norm_return": 0.5245867371559143,
+      "steps": 10543,
+      "failed": true
+    },
+    "jumps1_subject5": {
+      "norm_return": 0.635584831237793,
+      "steps": 12221,
+      "failed": false
+    },
+    "run1_subject2": {
+      "norm_return": 0.6546488404273987,
+      "steps": 11890,
+      "failed": false
+    },
+    "run1_subject5": {
+      "norm_return": 0.604434609413147,
+      "steps": 11890,
+      "failed": false
+    },
+    "run2_subject1": {
+      "norm_return": 0.6012564897537231,
+      "steps": 12240,
+      "failed": false
+    },
+    "run2_subject4": {
+      "norm_return": 0.6016565561294556,
+      "steps": 12240,
+      "failed": false
+    },
+    "sprint1_subject2": {
+      "norm_return": 0.7015330195426941,
+      "steps": 13655,
+      "failed": false
+    },
+    "sprint1_subject4": {
+      "norm_return": 0.667984664440155,
+      "steps": 13655,
+      "failed": false
+    },
+    "walk1_subject1": {
+      "norm_return": 0.7215960621833801,
+      "steps": 13065,
+      "failed": false
+    },
+    "walk1_subject2": {
+      "norm_return": 0.7339684963226318,
+      "steps": 13065,
+      "failed": false
+    },
+    "walk1_subject5": {
+      "norm_return": 0.7161375880241394,
+      "steps": 13065,
+      "failed": false
+    },
+    "walk2_subject1": {
+      "norm_return": 0.6523644328117371,
+      "steps": 11908,
+      "failed": false
+    },
+    "walk2_subject3": {
+      "norm_return": 0.5590377449989319,
+      "steps": 9384,
+      "failed": true
+    },
+    "walk2_subject4": {
+      "norm_return": 0.7162398099899292,
+      "steps": 11908,
+      "failed": false
+    },
+    "walk3_subject1": {
+      "norm_return": 0.5353337526321411,
+      "steps": 9342,
+      "failed": true
+    },
+    "walk3_subject2": {
+      "norm_return": 0.7524118423461914,
+      "steps": 12330,
+      "failed": false
+    },
+    "walk3_subject3": {
+      "norm_return": 0.6508235335350037,
+      "steps": 12330,
+      "failed": false
+    },
+    "walk3_subject4": {
+      "norm_return": 0.624610424041748,
+      "steps": 10930,
+      "failed": true
+    },
+    "walk3_subject5": {
+      "norm_return": 0.6903426051139832,
+      "steps": 12330,
+      "failed": false
+    },
+    "walk4_subject1": {
+      "norm_return": 0.7515292763710022,
+      "steps": 8195,
+      "failed": false
+    }
+  }
+}
