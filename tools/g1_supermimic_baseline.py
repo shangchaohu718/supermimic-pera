@@ -204,7 +204,10 @@ def start(run: Path, resume: bool) -> None:
         write_json(run / "provenance.json", {
             "created_at": now(), "upstream_commit": profile["upstream_commit"],
             "source_commit": observed_commit,
-            "environment_setup": str(ROOT / "reports/g1_supermimic_setup/summary.json"),
+            "environment_setup": str(
+                ROOT / "reports/g1_supermimic_setup/summary.json"
+                if (ROOT / "reports/g1_supermimic_setup/summary.json").is_file()
+                else ROOT / "reports/g1_tracking_baseline_20261023/runtime.json"),
             "initialization": "random native networks; no pretrained G1 checkpoint available",
             "data": "40 locally available LAFAN1/G1 clips, 264705 source frames",
             "downloads_this_run_bytes": 0,
